@@ -34,14 +34,14 @@ window.onload = function(){
 
 	var doAjax = function(query){
 		var ajaxParamsRepo = {
-			url: urlRoot + 'query' + '/repos',
+			url: urlRoot + query.replace('#', '') + '/repos',
 			success: makeRepos
 		}
-console.log(urlRoot)
+console.log(urlRoot + query.replace('#', '') + '/repos')
 		$.ajax(ajaxParamsRepo)
 
 		var ajaxParams = {
-			url: urlRoot + 'query',
+			url: urlRoot + query.replace('#', ''),
 			success: setupPropsOnPage
 		}
 		
