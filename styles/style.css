@@ -1,5 +1,7 @@
 #container {
 	display: flex;
+	margin: auto;
+	max-width: 880px;
 	margin-top: 28px;
 }
 
@@ -21,16 +23,12 @@ input {
 }
 
 #leftColumn {
-	max-width: 100%;
-	height: 1000px;
 	flex: 1;
-	margin-left: 270px;
 }
 
 #login {
 	font-size: 25px;
 	color: gray;
-	margin-top: -25px;
 }
 
 #location, #email, #blog, #html_url {
@@ -38,9 +36,14 @@ input {
 }
 
 #rightColumn {
-	flex: 1;
-	margin-right: 600px;
-	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif
+	flex: 3;
+	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif;
+}
+
+.subInfo {
+	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif;
+	font-size: 16px;
+	color: #000000;
 }
 
 
@@ -48,6 +51,8 @@ input {
 	width: 230px;
 	height: 230px;
 	border-radius: 5%;
+	/*width: 100%;
+	height: 100%*/
 }
 
 #listedRepos > li {
@@ -64,17 +69,17 @@ input {
 	top: 20px;
 }
 
-@media all and (max-width: 1300px) {
+@media all and (max-width: 800px) {
 
   	#container {
     	display: block;
+}
 } 
 
-	#rightColumn{
+	/*#rightColumn{
 		margin-top: -480px;
 		margin-left: 220px;
-	}
-}
+	}*/
 
 
 

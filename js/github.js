@@ -22,33 +22,26 @@ window.onload = function(){
 		putInto('html_url', '#html_url',responseObj)
 	}
 
+	var formatListEl = function(repObj){
+		console.log(repObj)
+		var repoLine = "<a href=" + repObj.html_url + ">" +repObj.name +"</a>"
+			repoLine += '<p class= "subInfo">' + repObj.description + '</p>'
+			repoLine += '<p class= "subInfo">' + repObj.created_at + '</p>'
+		return repoLine;
+	}
+
 	var makeRepos = function(repoArr){
 		console.log(repoArr)
 		var ulElement = $('#listedRepos')[0];
 		ulElement.innerHTML = ''
 		
 		repoArr.forEach(function(repObj){
-			var repoLine = "<a href=" + repObj.html_url + ">" +repObj.name +"</a>"
+			var listElContent = formatListEl(repObj)
 			var newRepoItem = document.createElement('li')
-			newRepoItem.innerHTML = repoLine
+			newRepoItem.innerHTML = listElContent
 			ulElement.appendChild(newRepoItem)
 		})
 	}
-
-	//new function to add description of repos
-	// var makeDescription = function(repoArr){
-	
-	// 	var ulElement = $('#description')[0];
-	// 	ulElement.innerHTML = ''
-		
-	// 	repoArr.forEach(function(desObj){
-	// 		var objLine = desObj.description
-	// 		var newDesItem = document.createElement('li')
-	// 		newDesItem.innerHTML = repoLine
-	// 		ulElement.appendChild(newDesItem)
-	// 	})
-	// }
-
 
 	var doAjax = function(query){
 		var ajaxParamsRepo = {
