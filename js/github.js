@@ -15,33 +15,51 @@ window.onload = function(){
 	var setupPropsOnPage = function(responseObj){
 		putInto('avatar_url', '#profilePic', responseObj,1)
 		putInto('name','#name',responseObj)
+		putInto('login','#login',responseObj)
 		putInto('location', '#location',responseObj)
 		putInto('email', '#email',responseObj)
 		putInto('blog', '#blog',responseObj)
+		putInto('html_url', '#html_url',responseObj)
 	}
 
 	var makeRepos = function(repoArr){
+		console.log(repoArr)
 		var ulElement = $('#listedRepos')[0];
 		ulElement.innerHTML = ''
 		
 		repoArr.forEach(function(repObj){
-			var repoLine = repObj.name
+			var repoLine = "<a href=" + repObj.html_url + ">" +repObj.name +"</a>"
 			var newRepoItem = document.createElement('li')
 			newRepoItem.innerHTML = repoLine
 			ulElement.appendChild(newRepoItem)
 		})
 	}
 
+	//new function to add description of repos
+	// var makeDescription = function(repoArr){
+	
+	// 	var ulElement = $('#description')[0];
+	// 	ulElement.innerHTML = ''
+		
+	// 	repoArr.forEach(function(desObj){
+	// 		var objLine = desObj.description
+	// 		var newDesItem = document.createElement('li')
+	// 		newDesItem.innerHTML = repoLine
+	// 		ulElement.appendChild(newDesItem)
+	// 	})
+	// }
+
+
 	var doAjax = function(query){
 		var ajaxParamsRepo = {
-			url: urlRoot + 'query' + '/repos',
+			url: urlRoot + query.replace('#', '') + '/repos',
 			success: makeRepos
 		}
-console.log(urlRoot)
+
 		$.ajax(ajaxParamsRepo)
 
 		var ajaxParams = {
-			url: urlRoot + 'query',
+			url: urlRoot + query.replace('#', ''),
 			success: setupPropsOnPage
 		}
 		
@@ -81,28 +99,3 @@ console.log(urlRoot)
 
 }
 	
-	
-
-	// var ajaxResponse = $.ajax(ajaxParams)
-	// var ajaxResp = $.ajax(ajaxParamsRepo)
-
-		// .success(successFunction);
-
-	// window.ajaxResponse = ajaxResponse
-
-
-
-
-
-
-
-
-// var makeRepos = function(repoArr){
-// 		var ulElement = $('#listedRepos')[0];
-		
-// 		repoArr.forEach(function(repObj){
-// 			ulElement.innerHTML += "<li>" + repObj.name + "</li>"
-// 		})
-// 	}
-
-	// $("#repos li")

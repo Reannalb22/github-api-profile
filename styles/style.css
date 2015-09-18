@@ -5,8 +5,7 @@
 
 #topBox {
 	max-width: 100%;
-	background-color: #f5f5f5
-;
+	background-color: #f5f5f5;
 	height:  50px;
 }
 
@@ -16,40 +15,66 @@ input {
 	font-family: Palatino;
 	margin-left: 70px;
 	width: 360px;
-	left: 29px;
+	left: 246px;
 	position: absolute;
+	top: 20px;
 }
-
-/*input:focus {
-
-}*/
 
 #leftColumn {
 	max-width: 100%;
 	height: 1000px;
 	flex: 1;
-	margin-left: 50px;
+	margin-left: 270px;
+}
+
+#login {
+	font-size: 25px;
+	color: gray;
+	margin-top: -25px;
+}
+
+#location, #email, #blog, #html_url {
+	margin-top: -2%;
 }
 
 #rightColumn {
 	flex: 1;
+	margin-right: 600px;
+	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif
 }
 
 
 #profilePic {
 	width: 230px;
 	height: 230px;
+	border-radius: 5%;
 }
 
 #listedRepos > li {
 	list-style-type: none;
-	font-size: 30px;
-	font-family: Palatino;
+	font-size: 25px;
 	color: #4078c0;
-	margin-top: 20%;
+	margin-bottom: 20%;
+	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif
 }
 
-/*img {
+#gitImage {
 	position: absolute;
-	left: 57px;
-}*/
+	left: 275px;
+	top: 20px;
+}
+
+@media all and (max-width: 1300px) {
+
+  	#container {
+    	display: block;
+} 
+
+	#rightColumn{
+		margin-top: -480px;
+		margin-left: 220px;
+	}
+}
+
+
+
