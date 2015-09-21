@@ -29,10 +29,11 @@ input {
 #login {
 	font-size: 25px;
 	color: gray;
+	margin: 2px;
 }
 
 #location, #email, #blog, #html_url {
-	margin-top: -2%;
+	margin-bottom: -2%;
 }
 
 #rightColumn {
@@ -59,7 +60,7 @@ input {
 	list-style-type: none;
 	font-size: 25px;
 	color: #4078c0;
-	margin-bottom: 20%;
+	margin-bottom: 8%;
 	font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif
 }
 
@@ -67,6 +68,10 @@ input {
 	position: absolute;
 	left: 275px;
 	top: 20px;
+}
+
+#name {
+	margin-bottom: 0px;
 }
 
 @media all and (max-width: 800px) {

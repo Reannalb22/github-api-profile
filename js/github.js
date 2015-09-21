@@ -25,8 +25,11 @@ window.onload = function(){
 	var formatListEl = function(repObj){
 		console.log(repObj)
 		var repoLine = "<a href=" + repObj.html_url + ">" +repObj.name +"</a>"
-			repoLine += '<p class= "subInfo">' + repObj.description + '</p>'
-			repoLine += '<p class= "subInfo">' + repObj.created_at + '</p>'
+			repoLine += '<p class= "subInfo">' + repObj.updated_at + '</p>'
+			// repoLine += '<p class= "subInfo">' + repObj.stargazers_url + '</p>'
+			// repoLine += '<p class= "subInfo">' + repObj.stargazers_count + '</p>'
+			// repoLine += '<p class= "subInfo">' + repObj.statuses_url + '</p>'
+			// repoLine += '<p class= "subInfo">' + repObj.subscribers_url + '</p>'
 		return repoLine;
 	}
 
@@ -78,7 +81,6 @@ window.onload = function(){
 		var inputEl = $('input')[0]
 		inputEl.onkeypress = getUserQuery
 		var query = location.hash
-		console.log(location.hash)
 		doAjax(query)
 	}
 
